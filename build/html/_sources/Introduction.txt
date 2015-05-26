@@ -33,7 +33,7 @@ There are several ways to install telomerecat. Perhaps the easiest is to downloa
 Install telomerecat as precompiled binary
 +++++++++++++++++++++++++++++++++++++++++
 
-The easiest way to use telomerecat is to download one of the precompiled binaries listed here (link to binaries). All you need to do is download the binary for your system and then navigate to the file on your system and use a terminal command to start the program. This will be second nature to those experienced with the command line. If you need a little more help with installation the next few paragraphs can introduce you to some of the basics.
+The easiest way to use telomerecat is to download one of the precompiled binaries listed here (link to binaries). All you need to do is download the binary for your system and then navigate to the file on your system and use a terminal command to start the program. This will be second nature to those experienced with the command line.
 
 The rest of these instructions are intended to help novices get the binary installed and working on the command line. We will install telomerecat to an easy to access location on the users computer.
 
@@ -89,6 +89,16 @@ Install using pip
   pip -V
 
 If pip is installed on your system you should see some text describing the version of pip installed on your system. If your terminal reports that the command is not found you'll have to either install pip (instructions are readily available on the web) or use one of the other installation methods.
+
+If you have root permissions on the machine that you hope to run telomerecat on the following command will install telomerecat and all dependencies:
+
+.. code-block:: shell
+  
+  pip install telomerecat
+
+If this doesn't work because of a permissions error you will need to either gain root permission or use a virtual environment. Virtual environments are a very common way of installing and running python based software. Full instructions on downloading and setting up a `python virtual environment may be found here`_.
+
+.. _python virtual environment may be found here: http://docs.python-guide.org/en/latest/dev/virtualenvs/). 
 
 
 

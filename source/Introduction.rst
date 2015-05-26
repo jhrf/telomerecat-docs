@@ -96,7 +96,9 @@ If you have root permissions on the machine that you hope to run telomerecat on 
   
   pip install telomerecat
 
-If this doesn't work because of a permissions error you will need to either gain root permission or use a virtual environment. Virtual environments are a very common way of installing and running python based software. [Full instructions on downloading and setting up a python virtual environment may be found here](http://docs.python-guide.org/en/latest/dev/virtualenvs/). 
+If this doesn't work because of a permissions error you will need to either gain root permission (try adding sudo infront of the above command) or use a virtual environment. Virtual environments are a very common way of installing and running python based software. Full instructions on downloading and setting up a `python virtual environment may be found here`_. 
+
+.. _python virtual environment may be found here: http://docs.python-guide.org/en/latest/dev/virtualenvs/). 
 
 
 
