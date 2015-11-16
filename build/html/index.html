@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to telomerecat &mdash; telomerecat-docs 1.0 documentation</title>
+    <title>Welcome to Telomerecat &mdash; telomerecat-docs 1.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -46,26 +46,27 @@
           <div class="body">
             
   <div class="section" id="welcome-to-telomerecat">
-<h1>Welcome to telomerecat<a class="headerlink" href="#welcome-to-telomerecat" title="Permalink to this headline">¶</a></h1>
+<h1>Welcome to Telomerecat<a class="headerlink" href="#welcome-to-telomerecat" title="Permalink to this headline">¶</a></h1>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Henry Farmery</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Date:</th><td class="field-body">May 26, 2015</td>
+<tr class="field-even field"><th class="field-name">Date:</th><td class="field-body">November 16, 2015</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Version:</th><td class="field-body">1.0</td>
 </tr>
 </tbody>
 </table>
-<p><cite>telomerecat</cite> estimates the average length of telomeres given whole genome sequencing (WGS) files as input. Length estimation takes into account noise genereated by interstital telomeric sequences and the subtelomere to provide a more accurate estimate. Additioanlly, <cite>telomerecat</cite> accounts for anneuploidy in WGS samples, without the users having to input an estimate of choromsomes. The biology and technical aspects of WGS are considered in an attempt to only measure true telomereic reads.</p>
-<p><cite>telomerecat</cite> is designed to run quickly on either your desktop or remote high powered computing facility. The amount of processors and memory is adjustable to the computing resources available to each user.</p>
-<p>Installing <cite>telomerecat</cite> is very similar to other python programs and can be acheived most easily by using pip. The following one line of code may be sufficient:</p>
-<div class="highlight-shell"><div class="highlight"><pre>sudo pip install telomerecat
+<p><cite>Telomerecat</cite> estimates the average length of telomeres given whole genome sequencing (WGS) files as input. Length estimation takes into account noise genereated by interstital telomeric sequences and the subtelomere to provide a more accurate estimate. Additioanlly, <cite>Telomerecat</cite> accounts for anneuploidy in WGS samples, without the users having to input an estimate of choromsomes. The biology and technical aspects of WGS are considered in an attempt to only measure true telomereic reads.</p>
+<p><cite>Telomerecat</cite> is designed to run quickly on either your desktop or remote high powered computing facility. The amount of processors is adjustable to the computing resources available to each user.</p>
+<p>Telomerecat is available as a pre-compiled binary for Linux and MacOSX. Effort has been made to increase backwards compatibility by compiling the binary against old versions of glibc (v2.12).</p>
+<p>If the pre-compiled binary does not work for you can install <cite>Telomerecat</cite> as a normal python package using <cite>pip</cite>:</p>
+<div class="highlight-shell"><div class="highlight"><pre>pip install Telomerecat
 </pre></div>
 </div>
-<p>Alternatives for users without root access are available. Precompiled binaries, requring no installation, are available for both MacOSX and Linux platforms.</p>
+<p>Telomerecat&#8217;s python dependancies will be installed automatically, however you will need to ensure that your system has an installed fortran compiler so that scipy will install. It is also good practise to install telomerecat inside a virtualenv (this is best practise for all python pacakges!).</p>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -95,7 +96,7 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Welcome to telomerecat</a><ul>
+<li><a class="reference internal" href="#">Welcome to Telomerecat</a><ul>
 <li><a class="reference internal" href="#useful-document-links">Useful Document Links</a></li>
 </ul>
 </li>

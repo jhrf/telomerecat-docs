@@ -3,11 +3,7 @@ Preface - Quickstart
 
 For those who don't want to read the docs before jumping in, try the code snippets below to get going with telomerecat as quickly as possible.
 
-First open your terminal and install telomerecat (if this doesn't work you'll need to read the docs!):
-
-.. code-block:: shell
-
-   sudo pip install telomerecat
+First open your terminal and ensure that telomerecat is installed (see section Installation).
 
 Then in your terminal create a directory in which to run your telomerecat analysis:
 
@@ -23,7 +19,7 @@ Now let's run telomerecat:
   
   telomerecat bam2length -v2 /path/to/bam_file.bam
 
-A .csv file with an estimate of length will be produced for your specified BAM file. With these default parameters and depending on how powerful your computer is, expect telomerecat to take an hour to process ~2 billion reads.
+A .csv file with an estimate of length will be produced for your specified BAM file. With these default parameters and depending on how powerful your computer is, expect telomerecat to take an hour and a half to process ~2 billion reads.
 
 Installing telomerecat
 ======================
@@ -71,7 +67,6 @@ To test that all this has worked simply type the following:
 
 If you see the telomerecat welcome message you have succesfully installed telomerecat! If not, make sure you followed the steps correctly. If you can't get this install to work please try some of the options listed in the following sections.
 
-  
 .. rubric:: Footnotes
 
 .. [#f1] These instructions assume that the user is using a Mac. The instructions are almost identical aside from the binary will be different and the starting Download location may be different.
@@ -96,9 +91,9 @@ If you have root permissions on the machine that you hope to run telomerecat on 
   
   pip install telomerecat
 
-If this doesn't work because of a permissions error you will need to either gain root permission or use a virtual environment. Virtual environments are a very common way of installing and running python based software. Full instructions on downloading and setting up a `python virtual environment may be found here`_.
+If this doesn't work because of a permissions error you will need to either gain root permission (try adding sudo infront of the above command) or use a virtual environment. Virtual environments are a very common way of installing and running python based software. Full instructions on downloading and setting up a `python virtual environment may be found here`_. 
 
-.. _python virtual environment may be found here: http://docs.python-guide.org/en/latest/dev/virtualenvs/). 
+.. _python virtual environment may be found here: http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
 
 
