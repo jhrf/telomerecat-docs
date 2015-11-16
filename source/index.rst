@@ -21,12 +21,36 @@ If the pre-compiled binary does not work for you can install `Telomerecat` as a 
 
 Telomerecat's python dependancies will be installed automatically, however you will need to ensure that your system has an installed fortran compiler so that scipy will install. It is also good practise to install telomerecat inside a virtualenv (this is best practise for all python pacakges!).
 
+Preface - Quickstart
+====================
+
+For those who don't want to read all of the docs before jumping in, try the code snippets below to get going with telomerecat as quickly as possible.
+
+First you'll need to ensure that telomerecat is installed (in most cases you'll just need the pre-compiled binary - check out the Installation section). 
+
+Once you're sure telomerecat is installed, open your terminal and create a directory in which to run your telomerecat analysis:
+
+.. code-block:: shell
+
+   cd ~
+   mkdir telomerecat-analysis
+   cd telomerecat-analysis
+
+Now let's run telomerecat:
+
+.. code-block:: shell
+  
+  telomerecat bam2length -v2 /path/to/bam_file.bam
+
+A .csv file with an estimate of length will be produced for your specified BAM file. With these default parameters and depending on how powerful your computer is, expect telomerecat to take an hour and a half to process ~2 billion reads.
+
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
    Introduction
+   EstimatingTelomere
    
 Useful Document Links
 =====================

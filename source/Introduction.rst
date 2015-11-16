@@ -1,26 +1,3 @@
-Preface - Quickstart
-====================
-
-For those who don't want to read the docs before jumping in, try the code snippets below to get going with telomerecat as quickly as possible.
-
-First open your terminal and ensure that telomerecat is installed (see section Installation).
-
-Then in your terminal create a directory in which to run your telomerecat analysis:
-
-.. code-block:: shell
-
-   cd ~
-   mkdir telomerecat-analysis
-   cd telomerecat-analysis
-
-Now let's run telomerecat:
-
-.. code-block:: shell
-  
-  telomerecat bam2length -v2 /path/to/bam_file.bam
-
-A .csv file with an estimate of length will be produced for your specified BAM file. With these default parameters and depending on how powerful your computer is, expect telomerecat to take an hour and a half to process ~2 billion reads.
-
 Installing telomerecat
 ======================
 
