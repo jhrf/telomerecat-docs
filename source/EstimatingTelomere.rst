@@ -8,41 +8,61 @@ Once we have generated a TELBAM we want to generate a length estimation. This ca
 To streamline this process users may wish to conduct both steps using the `bam2length` command. This will take a BAM file as input and output a length estimate .csv file. The user may supply the `-k` option in order to output the TELBAM generated as part of the process.
 
 
-Generating the TELBAM
-+++++++++++++++++++++
+bam2length
+++++++++++
+
+The most straightforard way of generating a telomere length estimate from a BAM file is by using the `bam2length` command. This command takes a BAM file and generates a length estimate in a .csv file.
+
+Invoke the `bam2length` command by inputing the following command into your terminal:
 
 .. code-block:: shell
   
-    mkdir ~/bin/
-    mv ~/bin/
-  
-.. rubric:: Footnotes
+    telomerecat bam2length -v2 /path/to/example.bam
 
-.. [#f1] These instructions assume that the user is using a Mac. The instructions are almost identical aside from the binary will be different and the starting Download location may be different.
-.. [#f2] Where it says `telomerecat-macosx-XX` you should use the actual name of the file you downloaded.
+The option `-v2` instructs `telomerecat` to print some output to the console. You should substitute a real path name in the place of :code: `path/to/example.bam`.
 
-Install using pip
-+++++++++++++++++
+Depending on the size of your BAM file, `telomerecat` will produce as estimate of length along with other vital statistics. 
 
-`telomerecat` can be installed on most systems using pip (just like thousands of other python programs).
-
-`pip` is a platform for installing python packages from the Python Package Index. It is widely available and comes as standard with many distribtuions of Mac OSX and Linux. You probably already have this program on your computer. Try typing the following in your console to see if you have `pip` installed:
+A full list of parameters that can be supplied to this command can be found with the following command:
 
 .. code-block:: shell
   
-  pip -V
+    telomerecat bam2length --help
 
-If pip is installed on your system you should see some text describing the version of pip installed on your system. If your terminal reports that the command is not found you'll have to either install pip (instructions are readily available on the web) or use one of the other installation methods.
+bam2telbam2
++++++++++++
 
-If you have root permissions on the machine that you hope to run telomerecat on the following command will install telomerecat and all dependencies:
+Most of the computational and time expended during a run of telomerecat is spent generating the TELBAM. Telomerecat must iterate over the entire BAM file to identify all telomere reads. Users may wish to split the time intensive TELBAM generation from the reletively short process of length estimation.
+
+To enable this seperation, telomerecat allows the user to generate the TELBAM using a seperate command.
 
 .. code-block:: shell
   
-  pip install telomerecat
+    telomerecat bam2telbam -v2 /path/to/example.bam
+  
 
-If this doesn't work because of a permissions error you will need to either gain root permission (try adding sudo infront of the above command) or use a virtual environment. Virtual environments are a very common way of installing and running python based software. Full instructions on downloading and setting up a `python virtual environment may be found here`_. 
+telbam2length
++++++++++++++
 
-.. _python virtual environment may be found here: http://docs.python-guide.org/en/latest/dev/virtualenvs/).
+`Coming soon`
 
+Understanding Telomerecat Output
+================================
+
+Telomerecat outputs length estimates in the form of a .csv file. The name of the .csv file always takes the form :code: `telomerecat_[UNIXTIME].csv`. This section explains the format of this file.
+
+What follows is a series of sections detailing what each of the columns in the output file means. The sections are organised in order of appearence in the header.
+
+A greater understanding of these terms may be gained from reading the following paper ...(paper forthcoming)
+
+F1
+++
+
+This is the amount of `F1` reads in the sample. F1 reads orginiationg from the base after the boundary to the most distal end of the telomere. 
+
+F2a
++++
+
+`Coming soon`
 
 
