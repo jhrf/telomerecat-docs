@@ -72,5 +72,9 @@ If this doesn't work because of a permissions error you will need to either gain
 
 .. _python virtual environment may be found here: http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
+Install using docker
+++++++++++++++++++++
+
+Coming soon
 
 

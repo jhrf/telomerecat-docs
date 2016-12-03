@@ -26,6 +26,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="telomerecat-docs 1.0 documentation" href="index.html" />
+    <link rel="next" title="Understanding Telomerecat Output" href="UnderstandingOutput.html" />
     <link rel="prev" title="Installing telomerecat" href="Introduction.html" /> 
   </head>
   <body role="document">
@@ -35,6 +36,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="UnderstandingOutput.html" title="Understanding Telomerecat Output"
+             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="Introduction.html" title="Installing telomerecat"
              accesskey="P">previous</a> |</li>
@@ -83,28 +87,6 @@
 </div>
 <div class="section" id="csv2length">
 <h2>csv2length<a class="headerlink" href="#csv2length" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
-<div class="section" id="understanding-telomerecat-output">
-<h1>Understanding Telomerecat Output<a class="headerlink" href="#understanding-telomerecat-output" title="Permalink to this headline">¶</a></h1>
-<p>Telomerecat outputs length estimates in the form of a .csv file. The name of the .csv file always takes the form <code class="code docutils literal"><span class="pre">telomerecat_[UNIXTIME].csv</span></code>. This section explains the format of this file.</p>
-<p>What follows is a series of sections detailing what each of the columns in the output file means. The sections are organised in order of appearence in the header.</p>
-<p>A greater understanding of these terms may be gained from reading the following paper ...(paper forthcoming)</p>
-<div class="section" id="f1">
-<h2>F1<a class="headerlink" href="#f1" title="Permalink to this headline">¶</a></h2>
-<p>This is the amount of <cite>F1</cite> reads in the sample. We can think of F1 reads as reads which are completely telomeric. F1 reads originate from the nucleotide after the boundary to the most distal end of the telomere.</p>
-</div>
-<div class="section" id="f2">
-<h2>F2<a class="headerlink" href="#f2" title="Permalink to this headline">¶</a></h2>
-<p>The amount of F2 reads in the sample. F2 reads are reads where one end is completely telomeric and the other is not. Additionally, the completely telomeric end is comprised of the pattern CCCTAA.</p>
-</div>
-<div class="section" id="f4">
-<h2>F4<a class="headerlink" href="#f4" title="Permalink to this headline">¶</a></h2>
-<p>The amount of F2 reads in the sample. F4 reads are reads where one end is completely telomeric and the other is not. Additionally, the completely telomeric end is comprised of the pattern TTAGGG.</p>
-</div>
-<div class="section" id="psi">
-<h2>Psi<a class="headerlink" href="#psi" title="Permalink to this headline">¶</a></h2>
-<p>This is a measure of fidelity from your sample, it is used in the F2a correction method. The greater this value, the more we believe the observed measurement of F2a. A description of how this variable is dervied for each sample is given in the paper.</p>
 <p><cite>Coming soon</cite></p>
 </div>
 </div>
@@ -124,18 +106,14 @@
 <li><a class="reference internal" href="#csv2length">csv2length</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#understanding-telomerecat-output">Understanding Telomerecat Output</a><ul>
-<li><a class="reference internal" href="#f1">F1</a></li>
-<li><a class="reference internal" href="#f2">F2</a></li>
-<li><a class="reference internal" href="#f4">F4</a></li>
-<li><a class="reference internal" href="#psi">Psi</a></li>
-</ul>
-</li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="Introduction.html"
                         title="previous chapter">Installing telomerecat</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="UnderstandingOutput.html"
+                        title="next chapter">Understanding Telomerecat Output</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -163,6 +141,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="UnderstandingOutput.html" title="Understanding Telomerecat Output"
+             >next</a> |</li>
         <li class="right" >
           <a href="Introduction.html" title="Installing telomerecat"
              >previous</a> |</li>
