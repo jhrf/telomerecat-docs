@@ -17,4 +17,4 @@ Contents:
    introduction
    installation
    estimating_telomere
-   enderstanding_output
+   understanding_output

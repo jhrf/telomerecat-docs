@@ -19,7 +19,7 @@ Invoke the `bam2length` command by inputing the following command into your term
   
     telomerecat bam2length -v2 /path/to/example.bam
 
-The option `-v2` instructs `telomerecat` to print some output to the console. You should substitute a real path name in the place of :code: `path/to/example.bam`.
+The option `-v2` instructs `telomerecat` to print some output to the console. You should substitute a real path name in the place of :code:`path/to/example.bam`.
 
 Depending on the size of your BAM file, `telomerecat` will produce as estimate of length along with other vital statistics. 
 
