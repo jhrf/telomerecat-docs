@@ -7,14 +7,14 @@ Telomerecat - Estimate telomere length from WGS samples
 :Date: |today|
 :Version: |version|
 
-Telomerecat docs.
+Welcome to the documentation for telomerecat. 
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   Introduction
-   Installation
-   EstimatingTelomere
-   UnderstandingOutput
+   introduction
+   installation
+   estimating_telomere
+   enderstanding_output
