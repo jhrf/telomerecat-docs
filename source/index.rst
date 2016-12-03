@@ -14,7 +14,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   introduction
-   installation
+   z_introduction
+   z_installation
    estimating_telomere
    understanding_output
