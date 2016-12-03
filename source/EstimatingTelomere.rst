@@ -1,11 +1,11 @@
-Estimating telomere length
-==========================
+Using Telomerecat
+=================
 
-Telomerecat estimates telomere length from whole genome sequencing files. To do this it first scans the input BAM file for anything that looks even remotely like a telomere. It collects all of these reads in a TELBAM. TELBAMs can take around an hour and a half to generate from a BAM file of around 150GB. However, once a TELBAM has been generated, it can be used to quickly generate telomere length estimates. Using these small TELBAMs means you don't need to store a full BAM file to conduct reproducible results. TELBAMS are generated with the command `bam2telbam` (see .
+Telomerecat estimates telomere length from whole genome sequencing files (WGS). The first step is to scan the input BAM file for any reads that looks even remotely like a telomere. It collects all of these reads and deposits them in a TELBAM. TELBAMs can take around an hour and a half to generate from a BAM file of around 150GB. However, once a TELBAM has been generated, it can be used to quickly generate telomere length estimates. Using these small TELBAMs means you don't need to store a full BAM file to conduct reproducible results. TELBAMS are generated with the command `bam2telbam`.
 
-Once we have generated a TELBAM we want to generate a length estimation. This can be done using the `telbam2length`. It usually takes around 2 minutes to generate a length estimate from a TELBAM.
+Once we have generated a TELBAM we can use it to generate a length estimation. This can be done using the `telbam2length`. It usually takes around 2 minutes to generate a length estimate from a TELBAM.
 
-To streamline this process users may wish to conduct both steps using the `bam2length` command. This will take a BAM file as input and output a length estimate .csv file. The user may supply the `-k` option in order to output the TELBAM generated as part of the process.
+To streamline this process users may wish to conduct both steps using the `bam2length` command. This will take a BAM file as input and output a length estimate .csv file. This command will automatically output TELBAMs for each of the inserted BAM files.
 
 
 bam2length
@@ -44,12 +44,20 @@ To enable this seperation, telomerecat allows the user to generate the TELBAM us
 telbam2length
 +++++++++++++
 
-`Coming soon`
+The telbam2length command is used to generate a TL estimate from a TELBAM. 
+
+.. code-block:: shell
+  
+    telomerecat bam2telbam -v2 /path/to/example.bam
+
+csv2length
+++++++++++
+
 
 Understanding Telomerecat Output
 ================================
 
-Telomerecat outputs length estimates in the form of a .csv file. The name of the .csv file always takes the form :code: `telomerecat_[UNIXTIME].csv`. This section explains the format of this file.
+Telomerecat outputs length estimates in the form of a .csv file. The name of the .csv file always takes the form :code:`telomerecat_[UNIXTIME].csv`. This section explains the format of this file.
 
 What follows is a series of sections detailing what each of the columns in the output file means. The sections are organised in order of appearence in the header.
 
@@ -58,10 +66,27 @@ A greater understanding of these terms may be gained from reading the following 
 F1
 ++
 
-This is the amount of `F1` reads in the sample. F1 reads orginiationg from the base after the boundary to the most distal end of the telomere. 
+This is the amount of `F1` reads in the sample. We can think of F1 reads as reads which are completely telomeric. F1 reads originate from the nucleotide after the boundary to the most distal end of the telomere. 
 
-F2a
+F2
+++
+
+The amount of F2 reads in the sample. F2 reads are reads where one end is completely telomeric and the other is not. Additionally, the completely telomeric end is comprised of the pattern CCCTAA. 
+
+F4
+++
+
+The amount of F2 reads in the sample. F4 reads are reads where one end is completely telomeric and the other is not. Additionally, the completely telomeric end is comprised of the pattern TTAGGG.
+
+Psi
 +++
+
+This is a measure of fidelity from your sample, it is used in the F2a correction method. The greater this value, the more we believe the observed measurement of F2a. A description of how this variable is dervied for each sample is given in the paper.
+
+
+
+
+
 
 `Coming soon`
 
