@@ -62,18 +62,17 @@
 </tbody>
 </table>
 <p><cite>Telomerecat</cite> estimates the average length of telomeres given whole genome sequencing (WGS) files as input. Length estimation takes into account noise genereated by interstital telomeric sequences and the subtelomere to provide a more accurate estimate. Additioanlly, <cite>Telomerecat</cite> accounts for anneuploidy in WGS samples, without the users having to input an estimate of choromsomes. The biology and technical aspects of WGS are considered in an attempt to only measure true telomereic reads.</p>
-<p><cite>Telomerecat</cite> is designed to run quickly on either your desktop or remote high powered computing facility. The amount of processors is adjustable to the computing resources available to the user.</p>
+<p><cite>Telomerecat</cite> is designed to run quickly on either your desktop or remote high powered computing facility. The amount of processors is adjustable to the computing resources available to each user.</p>
 <p>Telomerecat is available as a pre-compiled binary for Linux and MacOSX. Effort has been made to increase backwards compatibility by compiling the binary against old versions of glibc (v2.12).</p>
 <p>If the pre-compiled binary does not work for you can install <cite>Telomerecat</cite> as a normal python package using <cite>pip</cite>:</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>pip install Telomerecat
 </pre></div>
 </div>
 <p>Telomerecat&#8217;s python dependancies will be installed automatically, however you will need to ensure that your system has an installed fortran compiler so that scipy will install. It is also good practise to install telomerecat inside a virtualenv (this is best practise for all python pacakges!).</p>
-<p>Telomere is now available through docker. Use the following command once you have docker installed.</p>
 <div class="section" id="preface-quickstart">
 <h2>Preface - Quickstart<a class="headerlink" href="#preface-quickstart" title="Permalink to this headline">¶</a></h2>
 <p>For those who don&#8217;t want to read all of the docs before jumping in, try the code snippets below to get going with telomerecat as quickly as possible.</p>
-<p>First you&#8217;ll need to ensure that telomerecat is installed. Find out more in the <span class="xref doc">Installing telomerecat</span> section.</p>
+<p>First you&#8217;ll need to ensure that telomerecat is installed (in most cases you&#8217;ll just need the pre-compiled binary - check out the Installation section).</p>
 <p>Once you&#8217;re sure telomerecat is installed, open your terminal and create a directory in which to run your telomerecat analysis:</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~
 mkdir telomerecat-analysis
@@ -96,7 +95,6 @@ mkdir telomerecat-analysis
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Installing telomerecat</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Introduction.html#install-telomerecat-as-precompiled-binary">Install telomerecat as precompiled binary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Introduction.html#install-using-pip">Install using pip</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Introduction.html#install-using-docker">Install using docker</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="EstimatingTelomere.html">Using Telomerecat</a><ul>
@@ -106,11 +104,11 @@ mkdir telomerecat-analysis
 <li class="toctree-l2"><a class="reference internal" href="EstimatingTelomere.html#csv2length">csv2length</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="UnderstandingOutput.html">Understanding Telomerecat Output</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="UnderstandingOutput.html#f1">F1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="UnderstandingOutput.html#f2">F2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="UnderstandingOutput.html#f4">F4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="UnderstandingOutput.html#psi">Psi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EstimatingTelomere.html#understanding-telomerecat-output">Understanding Telomerecat Output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="EstimatingTelomere.html#f1">F1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EstimatingTelomere.html#f2">F2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EstimatingTelomere.html#f4">F4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EstimatingTelomere.html#psi">Psi</a></li>
 </ul>
 </li>
 </ul>
