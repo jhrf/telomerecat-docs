@@ -1,80 +1,48 @@
-Installing telomerecat
-======================
+Telomerecat - Estimate telomere length from WGS samples
+*******************************************************
 
-There are several ways to install telomerecat. Perhaps the easiest is to download the relevant binary and run telomerecat straight away. Other methods, which tie in with conventional ways to install python programs are available.
+`Telomerecat` estimates the average length of telomeres given whole genome sequencing (WGS) files as input. Length estimation takes into account noise genereated by interstital telomeric sequences and the subtelomere to provide a more accurate estimate. Additioanlly, `Telomerecat` accounts for anneuploidy in WGS samples, without the users having to input an estimate of choromsomes. The biology and technical aspects of WGS are considered in an attempt to only measure true telomereic reads. 
 
-Install telomerecat as precompiled binary
-+++++++++++++++++++++++++++++++++++++++++
+`Telomerecat` is designed to run quickly on either your desktop or remote high powered computing facility. The amount of processors is adjustable to the computing resources available to the user.  
 
-The easiest way to use telomerecat is to download one of the precompiled binaries listed here (link to binaries). All you need to do is download the binary for your system and then navigate to the file on your system and use a terminal command to start the program. This will be second nature to those experienced with the command line.
+Telomerecat is available as a pre-compiled binary for Linux and MacOSX. Effort has been made to increase backwards compatibility by compiling the binary against old versions of glibc (v2.12). 
 
-The rest of these instructions are intended to help novices get the binary installed and working on the command line. We will install telomerecat to an easy to access location on the users computer.
+If the pre-compiled binary does not work for you can install `Telomerecat` as a normal python package using `pip`:
 
-To start, follow the link above and download the binary for your system. The telomerecat binary will then download to your computer and will be in a folder with all your other downloads (on MacOSX this folder is "~/Downloads/" [#f1]_). Now open the `Terminal` on your computer. Once Terminal is open type the following: 
+.. code-block:: shell
+
+   pip install Telomerecat
+
+Telomerecat's python dependancies will be installed automatically, however you will need to ensure that your system has an installed fortran compiler so that scipy will install. It is also good practise to install telomerecat inside a virtualenv (this is best practise for all python pacakges!).
+
+Telomere is now available through docker. Use the following command once you have docker installed.
+
+Preface - Quickstart
+====================
+
+For those who don't want to read all of the docs before jumping in, try the code snippets below to get going with telomerecat as quickly as possible.
+
+First you'll need to ensure that telomerecat is installed. Find out more in the :ref:`Introduction` telomerecat section.
+
+Once you're sure telomerecat is installed, open your terminal and create a directory in which to run your telomerecat analysis:
+
+.. code-block:: shell
+
+   cd ~
+   mkdir telomerecat-analysis
+   cd telomerecat-analysis
+
+Now let's run telomerecat:
 
 .. code-block:: shell
   
-    mkdir ~/bin/
-    mv ~/bin/
-    
-This will create a new directory in which to store telomerecat.
+  telomerecat bam2length -v2 /path/to/bam_file.bam
 
-Now enter this block of code into your Terminal window [#f2]_:
+A .csv file with an estimate of length will be produced for your specified BAM file. With these default parameters and depending on how powerful your computer is, expect telomerecat to take an hour and a half to process ~2 billion reads.
+   
+Useful Document Links
+=====================
 
-.. code-block:: shell
-
-    cp ~/Downloads/telomerecat-macosx-XX ./
-    mv ./telomerecat-macosx-XX ./telomerecat
-
-This will move telomerecat into the directory we created and will give it a more easily referenced name (we can now refer to it as telomerecat rather than with all the extraneous platform and version details).
-
-Finally, enter this:
-
-.. code-block:: shell
-
-    chmod +x ./telomerecat
-
-This tells your system that it's ok to "exectue" (or, run) the file.
-
-To test that all this has worked simply type the following:
-
-.. code-block:: shell
-
-    ~/bin/telomerecat
-
-If you see the telomerecat welcome message you have succesfully installed telomerecat! If not, make sure you followed the steps correctly. If you can't get this install to work please try some of the options listed in the following sections.
-
-.. rubric:: Footnotes
-
-.. [#f1] These instructions assume that the user is using a Mac. The instructions are almost identical aside from the binary will be different and the starting Download location may be different.
-.. [#f2] Where it says `telomerecat-macosx-XX` you should use the actual name of the file you downloaded.
-
-Install using pip
-+++++++++++++++++
-
-`telomerecat` can be installed on most systems using pip (just like thousands of other python programs).
-
-`pip` is a platform for installing python packages from the Python Package Index. It is widely available and comes as standard with many distribtuions of Mac OSX and Linux. You probably already have this program on your computer. Try typing the following in your console to see if you have `pip` installed:
-
-.. code-block:: shell
-  
-  pip -V
-
-If pip is installed on your system you should see some text describing the version of pip installed on your system. If your terminal reports that the command is not found you'll have to either install pip (instructions are readily available on the web) or use one of the other installation methods.
-
-If you have root permissions on the machine that you hope to run telomerecat on the following command will install telomerecat and all dependencies:
-
-.. code-block:: shell
-  
-  pip install telomerecat
-
-If this doesn't work because of a permissions error you will need to either gain root permission (try adding sudo infront of the above command) or use a virtual environment. Virtual environments are a very common way of installing and running python based software. Full instructions on downloading and setting up a `python virtual environment may be found here`_. 
-
-.. _python virtual environment may be found here: http://docs.python-guide.org/en/latest/dev/virtualenvs/).
-
-Install using docker
-++++++++++++++++++++
-
-Coming soon
-
-
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
