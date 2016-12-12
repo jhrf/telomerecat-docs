@@ -6,9 +6,9 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Using Telomerecat &#8212; telomerecat-docs 1.0 documentation</title>
+    <title>Using Telomerecat &mdash; telomerecat-docs 1.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -23,14 +23,12 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="telomerecat-docs 1.0 documentation" href="index.html" />
     <link rel="next" title="Understanding Telomerecat Output" href="understanding_output.html" />
-    <link rel="prev" title="Telomerecat - Estimate telomere length from WGS samples" href="index.html" /> 
+    <link rel="prev" title="Installing telomerecat" href="installation.html" /> 
   </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
+  <body>
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -40,16 +38,16 @@
           <a href="understanding_output.html" title="Understanding Telomerecat Output"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Telomerecat - Estimate telomere length from WGS samples"
+          <a href="installation.html" title="Installing telomerecat"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">telomerecat-docs 1.0 documentation</a> &#187;</li> 
+        <li><a href="index.html">telomerecat-docs 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
   <div class="section" id="using-telomerecat">
 <h1>Using Telomerecat<a class="headerlink" href="#using-telomerecat" title="Permalink to this headline">¶</a></h1>
@@ -60,13 +58,13 @@
 <h2>bam2length<a class="headerlink" href="#bam2length" title="Permalink to this headline">¶</a></h2>
 <p>The most straightforard way of generating a telomere length estimate from a BAM file is by using the <cite>bam2length</cite> command. This command takes a BAM file and generates a length estimate in a .csv file.</p>
 <p>Invoke the <cite>bam2length</cite> command by inputing the following command into your terminal:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>telomerecat bam2length -v2 /path/to/example.bam
+<div class="highlight-shell"><div class="highlight"><pre>telomerecat bam2length -v2 /path/to/example.bam
 </pre></div>
 </div>
-<p>The option <cite>-v2</cite> instructs <cite>telomerecat</cite> to print some output to the console. You should substitute a real path name in the place of <code class="code docutils literal"><span class="pre">path/to/example.bam</span></code>.</p>
+<p>The option <cite>-v2</cite> instructs <cite>telomerecat</cite> to print some output to the console. You should substitute a real path name in the place of <tt class="code docutils literal"><span class="pre">path/to/example.bam</span></tt>.</p>
 <p>Depending on the size of your BAM file, <cite>telomerecat</cite> will produce as estimate of length along with other vital statistics.</p>
 <p>A full list of parameters that can be supplied to this command can be found with the following command:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>telomerecat bam2length --help
+<div class="highlight-shell"><div class="highlight"><pre>telomerecat bam2length --help
 </pre></div>
 </div>
 </div>
@@ -74,14 +72,14 @@
 <h2>bam2telbam2<a class="headerlink" href="#bam2telbam2" title="Permalink to this headline">¶</a></h2>
 <p>Most of the computational and time expended during a run of telomerecat is spent generating the TELBAM. Telomerecat must iterate over the entire BAM file to identify all telomere reads. Users may wish to split the time intensive TELBAM generation from the reletively short process of length estimation.</p>
 <p>To enable this seperation, telomerecat allows the user to generate the TELBAM using a seperate command.</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>telomerecat bam2telbam -v2 /path/to/example.bam
+<div class="highlight-shell"><div class="highlight"><pre>telomerecat bam2telbam -v2 /path/to/example.bam
 </pre></div>
 </div>
 </div>
 <div class="section" id="telbam2length">
 <h2>telbam2length<a class="headerlink" href="#telbam2length" title="Permalink to this headline">¶</a></h2>
 <p>The telbam2length command is used to generate a TL estimate from a TELBAM.</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>telomerecat bam2telbam -v2 /path/to/example.bam
+<div class="highlight-shell"><div class="highlight"><pre>telomerecat bam2telbam -v2 /path/to/example.bam
 </pre></div>
 </div>
 </div>
@@ -95,7 +93,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
@@ -109,33 +107,34 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Telomerecat - Estimate telomere length from WGS samples</a></p>
+  <p class="topless"><a href="installation.html"
+                        title="previous chapter">Installing telomerecat</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="understanding_output.html"
                         title="next chapter">Understanding Telomerecat Output</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/estimating_telomere.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/estimating_telomere.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -145,14 +144,14 @@
           <a href="understanding_output.html" title="Understanding Telomerecat Output"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Telomerecat - Estimate telomere length from WGS samples"
+          <a href="installation.html" title="Installing telomerecat"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">telomerecat-docs 1.0 documentation</a> &#187;</li> 
+        <li><a href="index.html">telomerecat-docs 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2015, JHR Farmery.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    <div class="footer">
+        &copy; Copyright 2015, JHR Farmery.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

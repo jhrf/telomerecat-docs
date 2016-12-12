@@ -22,7 +22,7 @@ Preface - Quickstart
 
 For those who don't want to read all of the docs before jumping in, try the code snippets below to get going with telomerecat as quickly as possible.
 
-First you'll need to ensure that telomerecat is installed. Find out more in the :ref:`installation section <install>`.
+First you'll need to ensure that telomerecat is installed. Find out more in the :ref:`Installation <install>` section .
 
 Once you're sure telomerecat is installed, open your terminal and create a directory in which to run your telomerecat analysis:
 

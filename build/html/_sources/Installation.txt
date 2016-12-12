@@ -1,6 +1,6 @@
+.. _install:
 Installing telomerecat
 ======================
-.. _install:
 
 There are several ways to install telomerecat. Perhaps the easiest is to download the relevant binary and run telomerecat straight away. Other methods, which tie in with conventional ways to install python programs are available.
 

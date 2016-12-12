@@ -6,9 +6,9 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Telomerecat - Estimate telomere length from WGS samples &#8212; telomerecat-docs 1.0 documentation</title>
+    <title>Telomerecat - Estimate telomere length from WGS samples &mdash; telomerecat-docs 1.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -23,25 +23,31 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="telomerecat-docs 1.0 documentation" href="index.html" /> 
+    <link rel="top" title="telomerecat-docs 1.0 documentation" href="index.html" />
+    <link rel="next" title="Installing telomerecat" href="installation.html" />
+    <link rel="prev" title="Telomerecat - Estimate telomere length from WGS samples" href="index.html" /> 
   </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
+  <body>
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">telomerecat-docs 1.0 documentation</a> &#187;</li> 
+        <li class="right" >
+          <a href="installation.html" title="Installing telomerecat"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Telomerecat - Estimate telomere length from WGS samples"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">telomerecat-docs 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
   <div class="section" id="telomerecat-estimate-telomere-length-from-wgs-samples">
 <h1>Telomerecat - Estimate telomere length from WGS samples<a class="headerlink" href="#telomerecat-estimate-telomere-length-from-wgs-samples" title="Permalink to this headline">¶</a></h1>
@@ -49,7 +55,7 @@
 <p><cite>Telomerecat</cite> is designed to run quickly on either your desktop or remote high powered computing facility. The amount of processors is adjustable to the computing resources available to the user.</p>
 <p>Telomerecat is available as a pre-compiled binary for Linux and MacOSX. Effort has been made to increase backwards compatibility by compiling the binary against old versions of glibc (v2.12).</p>
 <p>If the pre-compiled binary does not work for you can install <cite>Telomerecat</cite> as a normal python package using <cite>pip</cite>:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>pip install Telomerecat
+<div class="highlight-shell"><div class="highlight"><pre>pip install Telomerecat
 </pre></div>
 </div>
 <p>Telomerecat&#8217;s python dependancies will be installed automatically, however you will need to ensure that your system has an installed fortran compiler so that scipy will install. It is also good practise to install telomerecat inside a virtualenv (this is best practise for all python pacakges!).</p>
@@ -57,15 +63,15 @@
 <div class="section" id="preface-quickstart">
 <h2>Preface - Quickstart<a class="headerlink" href="#preface-quickstart" title="Permalink to this headline">¶</a></h2>
 <p>For those who don&#8217;t want to read all of the docs before jumping in, try the code snippets below to get going with telomerecat as quickly as possible.</p>
-<p>First you&#8217;ll need to ensure that telomerecat is installed. Find out more in the <a class="reference internal" href="installation.html#install"><span class="std std-ref">installation section</span></a>.</p>
+<p>First you&#8217;ll need to ensure that telomerecat is installed. Find out more in the <a class="reference internal" href="installation.html#install"><em>Installation</em></a> section .</p>
 <p>Once you&#8217;re sure telomerecat is installed, open your terminal and create a directory in which to run your telomerecat analysis:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~
+<div class="highlight-shell"><div class="highlight"><pre><span class="nb">cd</span> ~
 mkdir telomerecat-analysis
-<span class="nb">cd</span> telomerecat-analysis
+<span class="nb">cd </span>telomerecat-analysis
 </pre></div>
 </div>
 <p>Now let&#8217;s run telomerecat:</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>telomerecat bam2length -v2 /path/to/bam_file.bam
+<div class="highlight-shell"><div class="highlight"><pre>telomerecat bam2length -v2 /path/to/bam_file.bam
 </pre></div>
 </div>
 <p>A .csv file with an estimate of length will be produced for your specified BAM file. With these default parameters and depending on how powerful your computer is, expect telomerecat to take an hour and a half to process ~2 billion reads.</p>
@@ -73,9 +79,9 @@ mkdir telomerecat-analysis
 <div class="section" id="useful-document-links">
 <h2>Useful Document Links<a class="headerlink" href="#useful-document-links" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
 </ul>
 </div>
 </div>
@@ -84,7 +90,7 @@ mkdir telomerecat-analysis
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
@@ -95,39 +101,52 @@ mkdir telomerecat-analysis
 </li>
 </ul>
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/introduction.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Telomerecat - Estimate telomere length from WGS samples</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="next chapter">Installing telomerecat</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/introduction.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">telomerecat-docs 1.0 documentation</a> &#187;</li> 
+        <li class="right" >
+          <a href="installation.html" title="Installing telomerecat"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Telomerecat - Estimate telomere length from WGS samples"
+             >previous</a> |</li>
+        <li><a href="index.html">telomerecat-docs 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2015, JHR Farmery.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+    <div class="footer">
+        &copy; Copyright 2015, JHR Farmery.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>
