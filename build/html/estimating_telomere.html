@@ -56,32 +56,35 @@
 <p>To streamline this process users may wish to conduct both steps using the <cite>bam2length</cite> command. This will take a BAM file as input and output a length estimate .csv file. This command will automatically output TELBAMs for each of the inserted BAM files.</p>
 <div class="section" id="bam2length">
 <h2>bam2length<a class="headerlink" href="#bam2length" title="Permalink to this headline">¶</a></h2>
-<p>The most straightforard way of generating a telomere length estimate from a BAM file is by using the <cite>bam2length</cite> command. This command takes a BAM file and generates a length estimate in a .csv file.</p>
+<p>The most straightforward way of generating a telomere length estimate from a BAM file is by using the <cite>bam2length</cite> command. This command takes a BAM file and generates a length estimate in a .csv file.</p>
 <p>Invoke the <cite>bam2length</cite> command by inputing the following command into your terminal:</p>
-<div class="highlight-shell"><div class="highlight"><pre>telomerecat bam2length -v2 /path/to/example.bam
+<div class="highlight-shell"><div class="highlight"><pre>telomerecat bam2length /path/to/example.bam
 </pre></div>
 </div>
-<p>The option <cite>-v2</cite> instructs <cite>telomerecat</cite> to print some output to the console. You should substitute a real path name in the place of <tt class="code docutils literal"><span class="pre">path/to/example.bam</span></tt>.</p>
-<p>Depending on the size of your BAM file, <cite>telomerecat</cite> will produce as estimate of length along with other vital statistics.</p>
+<p>If output to the command line is desired the option <cite>-v</cite> should be used. You should substitute a real path name in the place of <tt class="code docutils literal"><span class="pre">path/to/example.bam</span></tt>.</p>
 <p>A full list of parameters that can be supplied to this command can be found with the following command:</p>
 <div class="highlight-shell"><div class="highlight"><pre>telomerecat bam2length --help
 </pre></div>
 </div>
+<p>The bam2length command is actually just a convenient wrapper for the bam2telbam and telbam2length commands. If working with a large batch of data (where large is more than approximately 5 samples) it is best practise to first generate a batch of TELBAMs using the bam2telbam command and then to run the telbam2length command on the entire batch simultaneously. This will make use of information from within the cohort for F2a correction which may help estimation in low coverage samples.</p>
 </div>
-<div class="section" id="bam2telbam2">
-<h2>bam2telbam2<a class="headerlink" href="#bam2telbam2" title="Permalink to this headline">¶</a></h2>
-<p>Most of the computational and time expended during a run of telomerecat is spent generating the TELBAM. Telomerecat must iterate over the entire BAM file to identify all telomere reads. Users may wish to split the time intensive TELBAM generation from the reletively short process of length estimation.</p>
-<p>To enable this seperation, telomerecat allows the user to generate the TELBAM using a seperate command.</p>
-<div class="highlight-shell"><div class="highlight"><pre>telomerecat bam2telbam -v2 /path/to/example.bam
+<div class="section" id="bam2telbam">
+<h2>bam2telbam<a class="headerlink" href="#bam2telbam" title="Permalink to this headline">¶</a></h2>
+<p>Most of the computational effort and time expended during a run of telomerecat is spent generating the TELBAM. Telomerecat must iterate over the entire BAM file to identify all telomere reads. Users may wish to split the time intensive TELBAM generation from the relatively short process of length estimation.</p>
+<p>To enable this separation, telomerecat allows the user to generate the TELBAM using a separate command.</p>
+<div class="highlight-shell"><div class="highlight"><pre>telomerecat bam2telbam /path/to/example.bam
 </pre></div>
 </div>
+<p>This command is straightforward and takes very few parameters. However, the user should provide the desired number of processing cores to telomerecat using the <cite>-p</cite> option. Specifying more processing cores will enable telomerecat to run more quickly.</p>
 </div>
 <div class="section" id="telbam2length">
 <h2>telbam2length<a class="headerlink" href="#telbam2length" title="Permalink to this headline">¶</a></h2>
-<p>The telbam2length command is used to generate a TL estimate from a TELBAM.</p>
-<div class="highlight-shell"><div class="highlight"><pre>telomerecat bam2telbam -v2 /path/to/example.bam
+<p>The telbam2length command is used to generate a TL estimate from a TELBAM or multiple TELBAMs. A TELBAM is simply a subset of all the sequencing reads in the BAM which contain the sequence &#8220;TTAGGG&#8221; or &#8220;CCCTAA&#8221; at least twice. The pairs of any of the reads matching the above criteria are also included.</p>
+<p>telbam2length is invoked with the following call to the command line:</p>
+<div class="highlight-shell"><div class="highlight"><pre>telomerecat telbam2length /path/to/example1_telbam.bam ...
 </pre></div>
 </div>
+<p>The user may pass multiple TELBAMs to a single run of telbam2length. This will enable telomerecat to run an F2a correction that can help to normalise TL estimates for low coverage or low quality samples. The user can specify NOT to run F2a correction with the <cite>-d</cite> option.</p>
 </div>
 <div class="section" id="csv2length">
 <h2>csv2length<a class="headerlink" href="#csv2length" title="Permalink to this headline">¶</a></h2>
@@ -99,7 +102,7 @@
   <ul>
 <li><a class="reference internal" href="#">Using Telomerecat</a><ul>
 <li><a class="reference internal" href="#bam2length">bam2length</a></li>
-<li><a class="reference internal" href="#bam2telbam2">bam2telbam2</a></li>
+<li><a class="reference internal" href="#bam2telbam">bam2telbam</a></li>
 <li><a class="reference internal" href="#telbam2length">telbam2length</a></li>
 <li><a class="reference internal" href="#csv2length">csv2length</a></li>
 </ul>

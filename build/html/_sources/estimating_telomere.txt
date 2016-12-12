@@ -11,17 +11,15 @@ To streamline this process users may wish to conduct both steps using the `bam2l
 bam2length
 ++++++++++
 
-The most straightforard way of generating a telomere length estimate from a BAM file is by using the `bam2length` command. This command takes a BAM file and generates a length estimate in a .csv file.
+The most straightforward way of generating a telomere length estimate from a BAM file is by using the `bam2length` command. This command takes a BAM file and generates a length estimate in a .csv file.
 
 Invoke the `bam2length` command by inputing the following command into your terminal:
 
 .. code-block:: shell
   
-    telomerecat bam2length -v2 /path/to/example.bam
+    telomerecat bam2length /path/to/example.bam
 
-The option `-v2` instructs `telomerecat` to print some output to the console. You should substitute a real path name in the place of :code:`path/to/example.bam`.
-
-Depending on the size of your BAM file, `telomerecat` will produce as estimate of length along with other vital statistics. 
+If output to the command line is desired the option `-v` should be used. You should substitute a real path name in the place of :code:`path/to/example.bam`.
 
 A full list of parameters that can be supplied to this command can be found with the following command:
 
@@ -29,26 +27,34 @@ A full list of parameters that can be supplied to this command can be found with
   
     telomerecat bam2length --help
 
-bam2telbam2
-+++++++++++
+The bam2length command is actually just a convenient wrapper for the bam2telbam and telbam2length commands. If working with a large batch of data (where large is more than approximately 5 samples) it is best practise to first generate a batch of TELBAMs using the bam2telbam command and then to run the telbam2length command on the entire batch simultaneously. This will make use of information from within the cohort for F2a correction which may help estimation in low coverage samples.
 
-Most of the computational and time expended during a run of telomerecat is spent generating the TELBAM. Telomerecat must iterate over the entire BAM file to identify all telomere reads. Users may wish to split the time intensive TELBAM generation from the reletively short process of length estimation.
+bam2telbam
+++++++++++
 
-To enable this seperation, telomerecat allows the user to generate the TELBAM using a seperate command.
+Most of the computational effort and time expended during a run of telomerecat is spent generating the TELBAM. Telomerecat must iterate over the entire BAM file to identify all telomere reads. Users may wish to split the time intensive TELBAM generation from the relatively short process of length estimation.
+
+To enable this separation, telomerecat allows the user to generate the TELBAM using a separate command.
 
 .. code-block:: shell
   
-    telomerecat bam2telbam -v2 /path/to/example.bam
-  
+    telomerecat bam2telbam /path/to/example.bam
+
+This command is straightforward and takes very few parameters. However, the user should provide the desired number of processing cores to telomerecat using the `-p` option. Specifying more processing cores will enable telomerecat to run more quickly.
+
 
 telbam2length
 +++++++++++++
 
-The telbam2length command is used to generate a TL estimate from a TELBAM. 
+The telbam2length command is used to generate a TL estimate from a TELBAM or multiple TELBAMs. A TELBAM is simply a subset of all the sequencing reads in the BAM which contain the sequence "TTAGGG" or "CCCTAA" at least twice. The pairs of any of the reads matching the above criteria are also included. 
+
+telbam2length is invoked with the following call to the command line:
 
 .. code-block:: shell
   
-    telomerecat bam2telbam -v2 /path/to/example.bam
+    telomerecat telbam2length /path/to/example1_telbam.bam ...
+
+The user may pass multiple TELBAMs to a single run of telbam2length. This will enable telomerecat to run an F2a correction that can help to normalise TL estimates for low coverage or low quality samples. The user can specify NOT to run F2a correction with the `-d` option.
 
 csv2length
 ++++++++++

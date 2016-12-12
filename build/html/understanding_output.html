@@ -64,7 +64,28 @@
 </div>
 <div class="section" id="psi">
 <h2>Psi<a class="headerlink" href="#psi" title="Permalink to this headline">¶</a></h2>
-<p>This is a measure of fidelity from your sample, it is used in the F2a correction method. The greater this value, the more we believe the observed measurement of F2a. A description of how this variable is dervied for each sample is given in the paper.</p>
+<p>This is a measure of fidelity from your sample, it is used in the F2a correction method. The greater this value, the more we believe the observed measurement of F2a. A description of how this variable is derived for each sample is given in the paper.</p>
+</div>
+<div class="section" id="insert-mean">
+<h2>Insert_mean<a class="headerlink" href="#insert-mean" title="Permalink to this headline">¶</a></h2>
+<p>The insert size of the sample. This is either estimated from the TELBAM (default) or input by the user.</p>
+</div>
+<div class="section" id="insert-sd">
+<h2>Insert_sd<a class="headerlink" href="#insert-sd" title="Permalink to this headline">¶</a></h2>
+<p>The standard deviation of the insert size. As for the mean, this is either estimated from the TELBAM (default) or input by the user.</p>
+</div>
+<div class="section" id="f2a">
+<h2>F2a<a class="headerlink" href="#f2a" title="Permalink to this headline">¶</a></h2>
+<p>F2a reads are the estimated number of reads covering the boundary between telomere and nontelomere. The number is given by F2 - F4. The logic being that any F4 read is known to have come from an interstitial or subtelomere region. Any F4 read will have a companion F2. By subtracting F4 from F2 we find the approximate number of reads without a F4 companion. These are reads over the boundary. A more</p>
+</div>
+<div class="section" id="f2a-c">
+<h2>F2a_c<a class="headerlink" href="#f2a-c" title="Permalink to this headline">¶</a></h2>
+<p>This is F2a count used in the simulation, it represents the number of F2a reads after undergoing batch correction. If F2a correction is disabled by the user, this number will be the same as F2a.</p>
+<p>A full description of the F2a correction formula is given in the paper.</p>
+</div>
+<div class="section" id="length">
+<h2>Length<a class="headerlink" href="#length" title="Permalink to this headline">¶</a></h2>
+<p>The telomere length estimation.</p>
 </div>
 </div>
 
@@ -81,6 +102,11 @@
 <li><a class="reference internal" href="#f2">F2</a></li>
 <li><a class="reference internal" href="#f4">F4</a></li>
 <li><a class="reference internal" href="#psi">Psi</a></li>
+<li><a class="reference internal" href="#insert-mean">Insert_mean</a></li>
+<li><a class="reference internal" href="#insert-sd">Insert_sd</a></li>
+<li><a class="reference internal" href="#f2a">F2a</a></li>
+<li><a class="reference internal" href="#f2a-c">F2a_c</a></li>
+<li><a class="reference internal" href="#length">Length</a></li>
 </ul>
 </li>
 </ul>

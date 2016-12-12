@@ -25,5 +25,32 @@ The amount of F2 reads in the sample. F4 reads are reads where one end is comple
 Psi
 +++
 
-This is a measure of fidelity from your sample, it is used in the F2a correction method. The greater this value, the more we believe the observed measurement of F2a. A description of how this variable is dervied for each sample is given in the paper.
+This is a measure of fidelity from your sample, it is used in the F2a correction method. The greater this value, the more we believe the observed measurement of F2a. A description of how this variable is derived for each sample is given in the paper.
 
+Insert_mean
++++++++++++
+
+The insert size of the sample. This is either estimated from the TELBAM (default) or input by the user.
+
+Insert_sd
++++++++++
+
+The standard deviation of the insert size. As for the mean, this is either estimated from the TELBAM (default) or input by the user.
+
+F2a
++++
+
+F2a reads are the estimated number of reads covering the boundary between telomere and nontelomere. The number is given by F2 - F4. The logic being that any F4 read is known to have come from an interstitial or subtelomere region. Any F4 read will have a companion F2. By subtracting F4 from F2 we find the approximate number of reads without a F4 companion. These are reads over the boundary. A more 
+
+F2a_c
++++++
+
+This is F2a count used in the simulation, it represents the number of F2a reads after undergoing batch correction. If F2a correction is disabled by the user, this number will be the same as F2a.
+
+A full description of the F2a correction formula is given in the paper.
+
+
+Length
+++++++
+
+The telomere length estimation.
