@@ -27,3 +27,7 @@ Psi
 
 This is a measure of fidelity from your sample, it is used in the F2a correction method. The greater this value, the more we believe the observed measurement of F2a. A description of how this variable is dervied for each sample is given in the paper.
 
+Length
+++++++
+
+The telomere length as estimated by telomerecat
