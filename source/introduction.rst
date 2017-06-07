@@ -15,7 +15,9 @@ If the pre-compiled binary does not work for you can install `Telomerecat` as a 
 
 Telomerecat's python dependancies will be installed automatically, however you will need to ensure that your system has an installed fortran compiler so that scipy will install. It is also good practise to install telomerecat inside a virtualenv (this is best practise for all python pacakges!).
 
-Telomere is now available through docker. Use the following command once you have docker installed.
+`For a full description of the method please read the article of biorxiv`_.
+
+.. _For a full description of the method please read the article of biorxiv: http://biorxiv.org/content/early/2017/05/19/139972.1.article-info
 
 Preface - Quickstart
 ====================
