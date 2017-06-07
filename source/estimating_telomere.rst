@@ -46,7 +46,7 @@ This command is straightforward and takes very few parameters. However, the user
 telbam2length
 +++++++++++++
 
-The telbam2length command is used to generate a TL estimate from a TELBAM or multiple TELBAMs. A TELBAM is simply a subset of all the sequencing reads in the BAM which contain the sequence "TTAGGG" or "CCCTAA" at least twice. The pairs of any of the reads matching the above criteria are also included. 
+The telbam2length command is used to generate a TL estimate from a TELBAM or multiple TELBAMs. A TELBAM is simply a subset of all the sequencing reads in the BAM which contain the sequence "TTAGGG" or "CCCTAA" at least twice. The pairs of any of the reads matching the above criteria are also included. TELBAMs are generated automatically by both the bam2length and bam2telbam commands.
 
 telbam2length is invoked with the following call to the command line:
 
@@ -54,9 +54,21 @@ telbam2length is invoked with the following call to the command line:
   
     telomerecat telbam2length /path/to/example1_telbam.bam ...
 
-The user may pass multiple TELBAMs to a single run of telbam2length. This will enable telomerecat to run an F2a correction that can help to normalise TL estimates for low coverage or low quality samples. The user can specify NOT to run F2a correction with the `-d` option.
+The user may pass multiple TELBAMs to a single run of telbam2length. 
+
+In some cases the user may find it useful to run cohort correction to the F2a measurement for each sample. We find that cohort correction is especially useful on lower coverage data and low quality samples. One important consideration when using cohort correction is that samples should be from the same sequencing batch. The cohort correction method uses information about the ratio of F2 and F4 reads on a population levels and different sequencing chemistries and platform seem to produce differing ratios of these reads. Thus, using cohort correction across sequencing batches may cause less accurate estimation.
+
+The user can specify NOT to run F2a correction with the `-d` option.
 
 csv2length
 ++++++++++
 
-`Coming soon`
+The csv2length command allows users to generate estimations using a CSV that was previosuly output teloemrecat. This is useful when considering whether or not to use cohort correction. For instance, a user may generate a cohort corrected CSV using the telbam2length command and then insert the resultant csv into the csv2length command without cohort correction. This will save time as meta data does not need to be generated from individual TELBAMs.
+
+csv2length is invoked with the following call:
+
+. code-block:: shell
+  
+    telomerecat csv2length /path/to/example1_telbam.csv ...
+
+

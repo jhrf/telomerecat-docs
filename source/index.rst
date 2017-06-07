@@ -9,6 +9,8 @@ Telomerecat - Estimate telomere length from WGS samples
 
 Welcome to the documentation for telomerecat. 
 
+Email jhrf2@cam.ac.uk with any queries.
+
 Contents:
 
 .. toctree::

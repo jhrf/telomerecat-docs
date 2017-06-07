@@ -49,8 +49,7 @@ This is F2a count used in the simulation, it represents the number of F2a reads 
 
 A full description of the F2a correction formula is given in the paper.
 
-
 Length
 ++++++
 
-The telomere length estimation.
+The telomere length as estimated by telomerecat. Length is output in basepairs
