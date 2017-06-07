@@ -2,53 +2,7 @@
 Installing telomerecat
 ======================
 
-There are several ways to install telomerecat. Perhaps the easiest is to download the relevant binary and run telomerecat straight away. Other methods, which tie in with conventional ways to install python programs are available.
-
-Install telomerecat as precompiled binary
-+++++++++++++++++++++++++++++++++++++++++
-
-The easiest way to use telomerecat is to download one of the precompiled binaries listed here (link to binaries). All you need to do is download the binary for your system and then navigate to the file on your system and use a terminal command to start the program. This will be second nature to those experienced with the command line.
-
-The rest of these instructions are intended to help novices get the binary installed and working on the command line. We will install telomerecat to an easy to access location on the users computer.
-
-To start, follow the link above and download the binary for your system. The telomerecat binary will then download to your computer and will be in a folder with all your other downloads (on MacOSX this folder is "~/Downloads/" [#f1]_). Now open the `Terminal` on your computer. Once Terminal is open type the following: 
-
-.. code-block:: shell
-  
-    mkdir ~/bin/
-    mv ~/bin/
-    
-This will create a new directory in which to store telomerecat.
-
-Now enter this block of code into your Terminal window [#f2]_:
-
-.. code-block:: shell
-
-    cp ~/Downloads/telomerecat-macosx-XX ./
-    mv ./telomerecat-macosx-XX ./telomerecat
-
-This will move telomerecat into the directory we created and will give it a more easily referenced name (we can now refer to it as telomerecat rather than with all the extraneous platform and version details).
-
-Finally, enter this:
-
-.. code-block:: shell
-
-    chmod +x ./telomerecat
-
-This tells your system that it's ok to "exectue" (or, run) the file.
-
-To test that all this has worked simply type the following:
-
-.. code-block:: shell
-
-    ~/bin/telomerecat
-
-If you see the telomerecat welcome message you have succesfully installed telomerecat! If not, make sure you followed the steps correctly. If you can't get this install to work please try some of the options listed in the following sections.
-
-.. rubric:: Footnotes
-
-.. [#f1] These instructions assume that the user is using a Mac. The instructions are almost identical aside from the binary will be different and the starting Download location may be different.
-.. [#f2] Where it says `telomerecat-macosx-XX` you should use the actual name of the file you downloaded.
+These instructions will allow you to install and run telomerecat on your Linux or Mac computer.
 
 Install using pip
 +++++++++++++++++
@@ -76,6 +30,12 @@ If this doesn't work because of a permissions error you will need to either gain
 Install using docker
 ++++++++++++++++++++
 
-Coming soon
+Ensure that docker is installed and working on your computer. `Instructions for docker can be found on the docker website`_.
 
+.. _Instructions for docker can be found on the docker website: https://docs.docker.com/
 
+Telomerecat is then installed as any other with any other docker package:
+
+.. code-block:: shell
+  
+  docker pull telomerecat
